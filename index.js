@@ -1,9 +1,26 @@
 function isPalindrome(word) {
-  // Write your algorithm here
-}
+  // Convert the word to lowercase to handle case insensitivity
+  word = word.toLowerCase();
 
-/* 
-  Add your pseudocode here
+  // Initialize two pointers
+  let left = 0;
+  let right = word.length - 1;
+
+  // Iterate through the word from both ends towards the center
+  while (left < right) {
+    // If characters at the pointers don't match, it's not a palindrome
+    if (word[left] !== word[right]) {
+      return false;
+    }
+    // Move the pointers towards the center
+    left++;
+    right--;
+  }
+
+  // If the loop completes without finding any mismatches, it's a palindrome
+  return true;
+}
+  /*Add your pseudocode here
 */
 
 /*
